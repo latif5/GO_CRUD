@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Product</title>
+    </head>
+    <body>
+        <h3>Product List</h3>
+        <form method="PUT" action="/products/update">
+            <table>
+                <tr>
+                {{range .products}}
+                <input type="hidden" name="id" value="{{.ID}}">
+                    <td>Name :</td>
+                    <td>
+                        <input type="text" name="name" value="{{.Name}}">
+                    </td>
+                    <td>Price :</td>
+                    <td>
+                        <input type="text" name="price" value="{{.Price}}">
+                    </td>
+                    <td>Quantity :</td>
+                    <td>
+                        <input type="text" name="quantity" value="{{.Quantity}}">
+                    </td>
+                    <td>Description :</td>
+                    <td>
+                        <input type="text" name="description" value="{{.Description}}">
+                    </td>
+                {{end}}
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="Save"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
